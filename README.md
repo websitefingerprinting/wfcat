@@ -1,8 +1,6 @@
-# WFCAT
+# Official implementation for WFCAT
 
-Official implementation for our TDSC 2025 paper **WFCAT: Augmenting Website Fingerprinting With Channel-Wise Attention on Timing Features**.
-
-This repository contains the code for the IEEE TDSC 2026 paper **WFCAT: Augmenting Website Fingerprinting With Channel-Wise Attention on Timing Features**.
+This repository contains the code for the IEEE TDSC 2025 paper **WFCAT: Augmenting Website Fingerprinting With Channel-Wise Attention on Timing Features**.
 
 This release keeps the experiment interface simple: choose a backbone with `--model` and an input representation with `--feature-type`. The default configuration is WFCAT with IAT histogram features.
 
