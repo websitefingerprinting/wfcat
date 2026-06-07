@@ -1,6 +1,8 @@
 # WFCAT
 
-Reference implementation for **WFCAT: Augmenting Website Fingerprinting With Channel-Wise Attention on Timing Features**.
+Official implementation for our TDSC 2025 paper **WFCAT: Augmenting Website Fingerprinting With Channel-Wise Attention on Timing Features**.
+
+This repository contains the code for the IEEE TDSC 2026 paper **WFCAT: Augmenting Website Fingerprinting With Channel-Wise Attention on Timing Features**.
 
 This release keeps the experiment interface simple: choose a backbone with `--model` and an input representation with `--feature-type`. The default configuration is WFCAT with IAT histogram features.
 
@@ -33,6 +35,24 @@ Using `uv`:
 uv venv
 uv pip install -r requirements.txt
 ```
+
+## Dataset
+
+Download the released WFCAT datasets from [Google Drive](https://drive.google.com/drive/folders/16N0Kwx1_TjaOFZG72du1X8etNcdpriim?usp=sharing).
+
+Each dataset supports closed-world and open-world evaluation with `100 x 100` monitored traces and `10,000` unmonitored traces.
+
+| Dataset | Source | Defense setting | Monitored | Unmonitored | Archive |
+| --- | --- | --- | --- | --- | --- |
+| Undefended | Real-world implementation | No defense | 100 websites x 100 traces | 10,000 traces | `undef.zip` |
+| WTF-PAD | Simulated | WTF-PAD defense | 100 websites x 100 traces | 10,000 traces | `WtfpadDefense_normal_rcv_0610_164219.zip` |
+| FRONT | Simulated | FRONT defense | 100 websites x 100 traces | 10,000 traces | `FrontDefense_t5_0602_130802.zip` |
+| Surakav | Real-world implementation | Surakav defense | 100 websites x 100 traces | 10,000 traces | `surakav_04.zip` |
+| Tamaraw | Simulated | Tamaraw defense | 100 websites x 100 traces | 10,000 traces | `TamarawDefense_default_0609_145705.zip` |
+| RegulaTor | Simulated | RegulaTor defense | 100 websites x 100 traces | 10,000 traces | `RegulatorDefense_heavy_0602_143841.zip` |
+| Palette | Simulated | Palette defense | 100 websites x 100 traces | 10,000 traces | `palette_ds.zip` |
+
+After downloading and extracting an archive, pass the folder containing `.cell` traces to `--data-path`.
 
 ## Data Format
 
